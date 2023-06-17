@@ -1,0 +1,31 @@
+﻿@model librarymanagementsystem.Models.student
+
+@{
+    ViewBag.Title = "studentlogin";
+}
+
+    @using (Html.BeginForm("studentlogin", "Home", FormMethod.Post))
+    {
+ <html>
+    <body style="background-image:url(../images/1.jpg); background-size:cover ; background-repeat:no-repeat"> 
+        <table style="margin-top:25%; font-size:medium">
+            <tr>
+                <td style="color:white">@Html.LabelFor(a => a.studentid)</td>
+                <td>@Html.TextBoxFor(a => a.studentid)</td>
+
+            </tr>
+            <tr>
+                <td style="color:white">@Html.LabelFor(a => a.studentpassword)</td>
+                <td>@Html.PasswordFor(a => a.studentpassword)</td>
+
+            </tr>
+            <tr>
+                <td><input type="submit" value="submit" /></td>
+                <td></td>
+            </tr>
+        </table>
+        </body>
+</html>
+    }
+
+

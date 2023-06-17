@@ -1,0 +1,41 @@
+﻿@model IEnumerable<librarymanagementsystem.Models.acc>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+   <button> @Html.ActionLink("Create New", "Create")</button>
+   <button> @Html.ActionLink("BACK", "Back")</button>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.accno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.book.booktitle)
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.accno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.book.booktitle)
+        </td>
+       
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.accno }) |
+            @Html.ActionLink("Details", "Details", new { id=item.accno }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.accno })
+        </td>
+    </tr>
+}
+
+</table>

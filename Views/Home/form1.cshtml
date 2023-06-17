@@ -1,0 +1,55 @@
+﻿@model librarymanagementsystem.Models.admin
+
+@{
+    ViewBag.Title = "form1";
+}
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                
+                <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<html>
+<body style="background-image:url(../images/db2.jpg); background-size:cover">
+    <table style="margin-top:25%; font-size:medium">
+        <tr>
+            <td>Student Table</td>
+            <td><button>@Html.ActionLink("Open", "Student", "students")</button></td>
+        </tr>
+        <tr>
+            <td>Admin Table</td>
+            <td><button>@Html.ActionLink("Open", "Admin", "admins")</button></td>
+        </tr>
+        <tr>
+            <td>Issue Table</td>
+            <td><button>@Html.ActionLink("Open", "Issue", "issues")</button></td>
+        </tr>
+        <tr>
+            <td>Books Table</td>
+            <td><button>@Html.ActionLink("Open", "Book", "books")</button></td>
+        </tr>
+        <tr>
+            <td>Accessoreies Table</td>
+            <td><button>@Html.ActionLink("Open", "Acc", "accs")</button></td>
+        </tr>
+
+
+    </table>
+</body>
+</html>

@@ -1,0 +1,66 @@
+﻿@model librarymanagementsystem.Models.issue
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>issue</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.acc.accno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.accno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.student.studentid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.studentid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bookissuedate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bookissuedate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bookduedate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bookduedate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bookreturndate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bookreturndate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fine)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.bookissueid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,90 @@
+﻿@model librarymanagementsystem.Models.issue
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>issue</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.bookissueid)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.adminid, "adminid", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("adminid", String.Empty)
+                @Html.ValidationMessageFor(model => model.adminid)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.studentid, "studentid", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("studentid", String.Empty)
+                @Html.ValidationMessageFor(model => model.studentid)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.accno, "accno", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("accno", String.Empty)
+                @Html.ValidationMessageFor(model => model.accno)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.bookissuedate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.bookissuedate)
+                @Html.ValidationMessageFor(model => model.bookissuedate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.bookduedate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.bookduedate)
+                @Html.ValidationMessageFor(model => model.bookduedate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.bookreturndate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.bookreturndate)
+                @Html.ValidationMessageFor(model => model.bookreturndate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fine, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fine)
+                @Html.ValidationMessageFor(model => model.fine)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

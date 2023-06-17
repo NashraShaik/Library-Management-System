@@ -1,0 +1,41 @@
+﻿@model librarymanagementsystem.Models.admin
+
+@{
+    ViewBag.Title = "adminlogin";
+}
+
+   
+
+     @using (Html.BeginForm("adminlogin", "Home", FormMethod.Post))
+{
+ <html>
+    <body style="background-image:url(../images/sahil.jpg); background-size:cover"> 
+        <table style="margin-top:25%; font-size:medium"  >
+         <tr>
+            <td style="color:white">@Html.LabelFor(a => a.adminid)</td>
+             <td>@Html.TextBoxFor(a => a.adminid)</td>
+
+        </tr>
+        <tr>
+            <td style="color:white">@Html.LabelFor(a => a.adminpassword)</td>
+            <td>@Html.PasswordFor(a => a.adminpassword)</td>
+
+        </tr>
+        <tr>
+            <td align="center"><input type="submit" value="submit" /></td>
+            <td></td>
+        </tr>
+    </table>
+        </body>
+</html>
+
+}
+
+
+
+
+
+
+
+
+

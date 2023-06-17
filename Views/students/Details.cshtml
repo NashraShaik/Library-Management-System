@@ -1,0 +1,55 @@
+﻿@model librarymanagementsystem.Models.student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.studentid)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.studentid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.studentname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.studentname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.studentpassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.studentpassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.studentphno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.studentphno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.studentemail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.studentemail)
+        </dd>
+
+    </dl>
+</div>
+<button>@Html.ActionLink("Logout", "Logout", "issues")</button>
+<button>@Html.ActionLink("View Book Issues", "bookissuedetails", "issues")</button>

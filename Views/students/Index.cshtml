@@ -1,0 +1,58 @@
+﻿@model IEnumerable<librarymanagementsystem.Models.student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    <p>
+        Searchoption  : @Html.TextBox("SearchName")<br />
+        <input type="submit" value="Search" />
+    </p>
+}
+<p>
+    <button> @Html.ActionLink("Create New", "Create")</button>
+    <button> @Html.ActionLink("BACK", "Back")</button>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.studentname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.studentpassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.studentphno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.studentemail)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.studentname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.studentpassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.studentphno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.studentemail)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.studentid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.studentid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.studentid })
+        </td>
+    </tr>
+}
+
+</table>

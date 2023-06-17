@@ -1,0 +1,66 @@
+﻿@model librarymanagementsystem.Models.student
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>student</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.studentid)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.studentname, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.studentname)
+                @Html.ValidationMessageFor(model => model.studentname)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.studentpassword, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.studentpassword)
+                @Html.ValidationMessageFor(model => model.studentpassword)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.studentphno, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.studentphno)
+                @Html.ValidationMessageFor(model => model.studentphno)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.studentemail, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.studentemail)
+                @Html.ValidationMessageFor(model => model.studentemail)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

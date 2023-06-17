@@ -1,0 +1,56 @@
+﻿@model IEnumerable<librarymanagementsystem.Models.issue>
+<h2>Books taken by</h2><h2>@Session["loginName"]</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.acc.accno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.student.studentid)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.bookissuedate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bookduedate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bookreturndate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fine)
+        </th>
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.accno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.studentid)
+            </td>
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.bookissuedate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bookduedate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bookreturndate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fine)
+            </td>
+            <td>
+                </tr>
+                }
+
+</table>
+
